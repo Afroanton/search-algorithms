@@ -21,9 +21,15 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="search_algorithm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Datageneration.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="search_algorithm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

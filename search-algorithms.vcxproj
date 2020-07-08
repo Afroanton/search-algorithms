@@ -141,9 +141,11 @@
   <ItemGroup>
     <ClCompile Include="Datageneration.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="search_algorithm.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Datageneration.h" />
+    <ClInclude Include="search_algorithm.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
