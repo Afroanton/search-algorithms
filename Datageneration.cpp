@@ -1,23 +1,36 @@
 #include "Datageneration.h"
 #include <algorithm>
 
-bool* find_primes(int max)
+std::vector<bool>* find_primes(int max)
 {
-	bool* array_pointer = new bool[max + 1];
-	std::fill(array_pointer, array_pointer+max, true);
-	array_pointer[0] = false;
-	array_pointer[1] = false;
+	auto vector_pointer = new std::vector<bool>(max + 1, true);
+	(*vector_pointer)[0] = false;
+	(*vector_pointer)[1] = false;
 
 	for (int i = 2; i <= sqrt(max); i++)
 	{
-		if (array_pointer[i])
+		if ((*vector_pointer)[i])
 		{
 			for (int j = 2; j * i <= max; j++)
 			{
-				array_pointer[j * i] = false;
+				(*vector_pointer)[i * j] = false;
 			}
 		}
 	}
-	return array_pointer;
+	return vector_pointer;
+}
+ 
+std::vector<int>* create_container(std::vector<bool>* primes)
+{
+	std::vector<int>* container = new std::vector<int>;
+	for (int i = 0; i < primes->size(); i++)
+	{
+		if ((*primes)[i])
+		{
+			container->push_back(i);
+		}
+	}
+
+	return container;
 }
 

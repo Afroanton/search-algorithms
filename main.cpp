@@ -1,19 +1,20 @@
 #include <iostream>
 #include "Datageneration.h"
-void print(bool* array)
+void print(std::vector<int>* vector)
 {
-	for (int i = 0; i <= 22 ; i++)
+	for (int i = 0; i < vector->size() ; i++)
 	{
-		if (array[i])
-		{
-			std::cout << i << "\n";
-		}
+		
+		
+			std::cout << (*vector)[i] << "\n";
+		
 	}
 }
 int main()
 {
-	
-	auto a = find_primes(22);
-	print(a);
+	int size = 22;
+	auto a = find_primes(size);
+	auto b = create_container(a);
+	print(b);
 	std::cout << "hello world" << "\n";
 }
