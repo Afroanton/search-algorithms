@@ -72,3 +72,33 @@ void quicker_sequential_search(std::vector<int>* search_container, int key)
 	}
 }
 
+
+void binary_search(std::vector<int>* search_container,int first,int last, int key)
+{
+
+
+	if (last >= first)
+	{
+		int mid = (last + first) / 2;
+		if (key < (*search_container)[mid])
+		{
+			
+			binary_search(search_container, first, mid-1, key);
+		}
+		else if (key > (*search_container)[mid])
+		{
+			
+			binary_search(search_container, mid+1, last, key);
+		}
+		else
+		{
+			std::cout << "element found" << mid <<"\n";
+		}
+	}
+	else
+	{
+		std::cout << "element not found" << "\n";
+	}
+}
+
+
