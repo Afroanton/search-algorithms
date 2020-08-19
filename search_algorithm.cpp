@@ -1,7 +1,6 @@
 #include "search_algorithm.h"
 #include <iostream>
 
-
 void sequential_search(std::vector<int>* search_container,int key)
 {
 	for (int i = 0; i < search_container->size(); i++)
@@ -92,7 +91,7 @@ void binary_search(std::vector<int>* search_container,int first,int last, int ke
 		}
 		else
 		{
-			std::cout << "element found" << mid <<"\n";
+			std::cout << "element found" << (*search_container)[mid] <<"\n";
 		}
 	}
 	else
@@ -100,5 +99,29 @@ void binary_search(std::vector<int>* search_container,int first,int last, int ke
 		std::cout << "element not found" << "\n";
 	}
 }
+
+void bst_search(Node* root, int key)
+{
+	Node* pointer = root;
+	while (pointer != nullptr)
+	{
+		if (key < pointer->data)
+		{
+			pointer = pointer->left_child;
+		}
+		else if(key > pointer->data)
+		{
+			pointer = pointer->right_child;
+		}
+		else
+		{
+			std::cout << "element found " << pointer->data << "\n";
+			return;
+		}
+	}
+	std::cout << "element not found" << "\n";
+	return;
+}
+
 
 
