@@ -29,4 +29,11 @@ void binary_search(std::vector<int>* search_container, int first, int last, int 
 /// @param key is the value that's being lookt for
 void bst_search(Node* root, int key);
 
+void bst_search2(std::vector<int>* tree, int key);
+
+/// @brief searching thru a hashtable for a given key
+/// @param hashtable is the hashtable that will be searched
+/// @param key is the value that's being lookt for
+void hash_search(std::vector<H_node*>* hashtable,int key);
+
 
